@@ -24,16 +24,16 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            ForEach(targets.indices, id: \.self) { index in
-                CurrentTargetPaceView(target: self.targets[index])
-                    .tag(index + 1)
-            }
-
             TargetPaceSettingsView(selectedPace: $selectedPace, targets: $targets, selectedTab: $selectedTab)
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
                 .tag(0)
+            
+            ForEach(targets.indices.reversed(), id: \.self) { index in
+                CurrentTargetPaceView(target: self.targets[index])
+                    .tag(index + 1)
+            }
         }
     }
 }

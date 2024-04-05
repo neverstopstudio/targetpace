@@ -23,14 +23,12 @@ struct TargetPaceSettingsView: View {
                 }
             }
             .pickerStyle(WheelPickerStyle())
-            .frame(height: 120)
-
-            Button(action: {
-                targets.append(TargetPace(pace: selectedPace))
-                selectedTab = targets.count
-            }) {
-                Text("Add Target")
-            }
+            .frame(height: 180)
+        }
+        .onTapGesture {
+            // Handle tap gesture
+            targets.append(TargetPace(pace: selectedPace))
+            selectedTab = targets.count
         }
     }
 }
