@@ -7,26 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		061AAD472BBDBF9600593134 /* TargetPaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAD462BBDBF9600593134 /* TargetPaceApp.swift */; };
-		061AAD492BBDBF9600593134 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAD482BBDBF9600593134 /* ContentView.swift */; };
-		061AAD4B2BBDBF9800593134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 061AAD4A2BBDBF9800593134 /* Assets.xcassets */; };
-		061AAD4E2BBDBF9800593134 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 061AAD4D2BBDBF9800593134 /* Preview Assets.xcassets */; };
-		061AAD552BBE4D6300593134 /* CurrentTargetPaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAD542BBE4D6300593134 /* CurrentTargetPaceView.swift */; };
-		061AAD572BBE529600593134 /* TargetPaceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAD562BBE529600593134 /* TargetPaceSettingsView.swift */; };
+		84C3956F2BC6D4CD008B9482 /* ConfigPaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3956E2BC6D4CD008B9482 /* ConfigPaceView.swift */; };
+		84C395712BC6F925008B9482 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C395702BC6F925008B9482 /* FeedbackManager.swift */; };
+		84E53A9B2BC6BF9E00195A25 /* targetpace Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 84E53A9A2BC6BF9E00195A25 /* targetpace Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84E53AA02BC6BF9E00195A25 /* targetpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E53A9F2BC6BF9E00195A25 /* targetpaceApp.swift */; };
+		84E53AA22BC6BF9E00195A25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E53AA12BC6BF9E00195A25 /* ContentView.swift */; };
+		84E53AA42BC6BFA000195A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E53AA32BC6BFA000195A25 /* Assets.xcassets */; };
+		84E53AA72BC6BFA000195A25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E53AA62BC6BFA000195A25 /* Preview Assets.xcassets */; };
+		84E53AB32BC6CADB00195A25 /* TargetPaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E53AB22BC6CADB00195A25 /* TargetPaceView.swift */; };
+		84E53AB92BC6CC2A00195A25 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E53AB82BC6CC2A00195A25 /* WorkoutManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		84E53A9C2BC6BF9E00195A25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E53A8E2BC6BF9D00195A25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84E53A992BC6BF9E00195A25;
+			remoteInfo = "targetpace Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84E53AAD2BC6BFA000195A25 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				84E53A9B2BC6BF9E00195A25 /* targetpace Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		061AAD432BBDBF9600593134 /* TargetPace Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TargetPace Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		061AAD462BBDBF9600593134 /* TargetPaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPaceApp.swift; sourceTree = "<group>"; };
-		061AAD482BBDBF9600593134 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		061AAD4A2BBDBF9800593134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		061AAD4D2BBDBF9800593134 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		061AAD542BBE4D6300593134 /* CurrentTargetPaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTargetPaceView.swift; sourceTree = "<group>"; };
-		061AAD562BBE529600593134 /* TargetPaceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPaceSettingsView.swift; sourceTree = "<group>"; };
+		84C3956E2BC6D4CD008B9482 /* ConfigPaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigPaceView.swift; sourceTree = "<group>"; };
+		84C395702BC6F925008B9482 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
+		84E53A942BC6BF9D00195A25 /* targetpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = targetpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E53A9A2BC6BF9E00195A25 /* targetpace Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "targetpace Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E53A9F2BC6BF9E00195A25 /* targetpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = targetpaceApp.swift; sourceTree = "<group>"; };
+		84E53AA12BC6BF9E00195A25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84E53AA32BC6BFA000195A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84E53AA62BC6BFA000195A25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84E53AB12BC6C8DD00195A25 /* targetpace Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "targetpace Watch App.entitlements"; sourceTree = "<group>"; };
+		84E53AB22BC6CADB00195A25 /* TargetPaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPaceView.swift; sourceTree = "<group>"; };
+		84E53AB82BC6CC2A00195A25 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		061AAD402BBDBF9600593134 /* Frameworks */ = {
+		84E53A972BC6BF9E00195A25 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,79 +67,119 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		061AAD3A2BBDBF9600593134 = {
+		84E53A8D2BC6BF9D00195A25 = {
 			isa = PBXGroup;
 			children = (
-				061AAD452BBDBF9600593134 /* TargetPace Watch App */,
-				061AAD442BBDBF9600593134 /* Products */,
+				84E53A9E2BC6BF9E00195A25 /* targetpace Watch App */,
+				84E53A952BC6BF9D00195A25 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		061AAD442BBDBF9600593134 /* Products */ = {
+		84E53A952BC6BF9D00195A25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				061AAD432BBDBF9600593134 /* TargetPace Watch App.app */,
+				84E53A942BC6BF9D00195A25 /* targetpace.app */,
+				84E53A9A2BC6BF9E00195A25 /* targetpace Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		061AAD452BBDBF9600593134 /* TargetPace Watch App */ = {
+		84E53A9E2BC6BF9E00195A25 /* targetpace Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				061AAD462BBDBF9600593134 /* TargetPaceApp.swift */,
-				061AAD482BBDBF9600593134 /* ContentView.swift */,
-				061AAD562BBE529600593134 /* TargetPaceSettingsView.swift */,
-				061AAD542BBE4D6300593134 /* CurrentTargetPaceView.swift */,
-				061AAD4A2BBDBF9800593134 /* Assets.xcassets */,
-				061AAD4C2BBDBF9800593134 /* Preview Content */,
+				84E53AB72BC6CB9B00195A25 /* Controller */,
+				84E53AB62BC6CB9200195A25 /* View */,
+				84E53AB12BC6C8DD00195A25 /* targetpace Watch App.entitlements */,
+				84E53A9F2BC6BF9E00195A25 /* targetpaceApp.swift */,
+				84E53AA32BC6BFA000195A25 /* Assets.xcassets */,
+				84E53AA52BC6BFA000195A25 /* Preview Content */,
 			);
-			path = "TargetPace Watch App";
+			path = "targetpace Watch App";
 			sourceTree = "<group>";
 		};
-		061AAD4C2BBDBF9800593134 /* Preview Content */ = {
+		84E53AA52BC6BFA000195A25 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				061AAD4D2BBDBF9800593134 /* Preview Assets.xcassets */,
+				84E53AA62BC6BFA000195A25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84E53AB62BC6CB9200195A25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84E53AA12BC6BF9E00195A25 /* ContentView.swift */,
+				84E53AB22BC6CADB00195A25 /* TargetPaceView.swift */,
+				84C3956E2BC6D4CD008B9482 /* ConfigPaceView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84E53AB72BC6CB9B00195A25 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84E53AB82BC6CC2A00195A25 /* WorkoutManager.swift */,
+				84C395702BC6F925008B9482 /* FeedbackManager.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		061AAD422BBDBF9600593134 /* TargetPace Watch App */ = {
+		84E53A932BC6BF9D00195A25 /* targetpace */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 061AAD512BBDBF9800593134 /* Build configuration list for PBXNativeTarget "TargetPace Watch App" */;
+			buildConfigurationList = 84E53AAE2BC6BFA000195A25 /* Build configuration list for PBXNativeTarget "targetpace" */;
 			buildPhases = (
-				061AAD3F2BBDBF9600593134 /* Sources */,
-				061AAD402BBDBF9600593134 /* Frameworks */,
-				061AAD412BBDBF9600593134 /* Resources */,
+				84E53A922BC6BF9D00195A25 /* Resources */,
+				84E53AAD2BC6BFA000195A25 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E53A9D2BC6BF9E00195A25 /* PBXTargetDependency */,
+			);
+			name = targetpace;
+			productName = targetpace;
+			productReference = 84E53A942BC6BF9D00195A25 /* targetpace.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		84E53A992BC6BF9E00195A25 /* targetpace Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E53AAA2BC6BFA000195A25 /* Build configuration list for PBXNativeTarget "targetpace Watch App" */;
+			buildPhases = (
+				84E53A962BC6BF9E00195A25 /* Sources */,
+				84E53A972BC6BF9E00195A25 /* Frameworks */,
+				84E53A982BC6BF9E00195A25 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "TargetPace Watch App";
-			productName = "TargetPace Watch App";
-			productReference = 061AAD432BBDBF9600593134 /* TargetPace Watch App.app */;
+			name = "targetpace Watch App";
+			productName = "targetpace Watch App";
+			productReference = 84E53A9A2BC6BF9E00195A25 /* targetpace Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		061AAD3B2BBDBF9600593134 /* Project object */ = {
+		84E53A8E2BC6BF9D00195A25 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					061AAD422BBDBF9600593134 = {
-						CreatedOnToolsVersion = 14.0.1;
+					84E53A932BC6BF9D00195A25 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					84E53A992BC6BF9E00195A25 = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = 061AAD3E2BBDBF9600593134 /* Build configuration list for PBXProject "TargetPace" */;
+			buildConfigurationList = 84E53A912BC6BF9D00195A25 /* Build configuration list for PBXProject "targetpace" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,47 +187,66 @@
 				en,
 				Base,
 			);
-			mainGroup = 061AAD3A2BBDBF9600593134;
-			productRefGroup = 061AAD442BBDBF9600593134 /* Products */;
+			mainGroup = 84E53A8D2BC6BF9D00195A25;
+			productRefGroup = 84E53A952BC6BF9D00195A25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				061AAD422BBDBF9600593134 /* TargetPace Watch App */,
+				84E53A932BC6BF9D00195A25 /* targetpace */,
+				84E53A992BC6BF9E00195A25 /* targetpace Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		061AAD412BBDBF9600593134 /* Resources */ = {
+		84E53A922BC6BF9D00195A25 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				061AAD4E2BBDBF9800593134 /* Preview Assets.xcassets in Resources */,
-				061AAD4B2BBDBF9800593134 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E53A982BC6BF9E00195A25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E53AA72BC6BFA000195A25 /* Preview Assets.xcassets in Resources */,
+				84E53AA42BC6BFA000195A25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		061AAD3F2BBDBF9600593134 /* Sources */ = {
+		84E53A962BC6BF9E00195A25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				061AAD492BBDBF9600593134 /* ContentView.swift in Sources */,
-				061AAD472BBDBF9600593134 /* TargetPaceApp.swift in Sources */,
-				061AAD552BBE4D6300593134 /* CurrentTargetPaceView.swift in Sources */,
-				061AAD572BBE529600593134 /* TargetPaceSettingsView.swift in Sources */,
+				84E53AA22BC6BF9E00195A25 /* ContentView.swift in Sources */,
+				84E53AB92BC6CC2A00195A25 /* WorkoutManager.swift in Sources */,
+				84E53AA02BC6BF9E00195A25 /* targetpaceApp.swift in Sources */,
+				84E53AB32BC6CADB00195A25 /* TargetPaceView.swift in Sources */,
+				84C395712BC6F925008B9482 /* FeedbackManager.swift in Sources */,
+				84C3956F2BC6D4CD008B9482 /* ConfigPaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		84E53A9D2BC6BF9E00195A25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84E53A992BC6BF9E00195A25 /* targetpace Watch App */;
+			targetProxy = 84E53A9C2BC6BF9E00195A25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		061AAD4F2BBDBF9800593134 /* Debug */ = {
+		84E53AA82BC6BFA000195A25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -189,7 +279,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -203,18 +294,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		061AAD502BBDBF9800593134 /* Release */ = {
+		84E53AA92BC6BFA000195A25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -247,7 +340,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -255,61 +349,67 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		061AAD522BBDBF9800593134 /* Debug */ = {
+		84E53AAB2BC6BFA000195A25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "targetpace Watch App/targetpace Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TargetPace Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"targetpace Watch App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TargetPace;
+				INFOPLIST_KEY_CFBundleDisplayName = targetpace;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Health Share Usage Description";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Health Update Usage Description";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.targetpace.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Debug;
 		};
-		061AAD532BBDBF9800593134 /* Release */ = {
+		84E53AAC2BC6BFA000195A25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "targetpace Watch App/targetpace Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TargetPace Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"targetpace Watch App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TargetPace;
+				INFOPLIST_KEY_CFBundleDisplayName = targetpace;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Health Share Usage Description";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Health Update Usage Description";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.targetpace.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -317,32 +417,72 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		84E53AAF2BC6BFA000195A25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_KEY_CFBundleDisplayName = targetpace;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.targetpace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		84E53AB02BC6BFA000195A25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_KEY_CFBundleDisplayName = targetpace;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = example.com.targetpace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		061AAD3E2BBDBF9600593134 /* Build configuration list for PBXProject "TargetPace" */ = {
+		84E53A912BC6BF9D00195A25 /* Build configuration list for PBXProject "targetpace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				061AAD4F2BBDBF9800593134 /* Debug */,
-				061AAD502BBDBF9800593134 /* Release */,
+				84E53AA82BC6BFA000195A25 /* Debug */,
+				84E53AA92BC6BFA000195A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		061AAD512BBDBF9800593134 /* Build configuration list for PBXNativeTarget "TargetPace Watch App" */ = {
+		84E53AAA2BC6BFA000195A25 /* Build configuration list for PBXNativeTarget "targetpace Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				061AAD522BBDBF9800593134 /* Debug */,
-				061AAD532BBDBF9800593134 /* Release */,
+				84E53AAB2BC6BFA000195A25 /* Debug */,
+				84E53AAC2BC6BFA000195A25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E53AAE2BC6BFA000195A25 /* Build configuration list for PBXNativeTarget "targetpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E53AAF2BC6BFA000195A25 /* Debug */,
+				84E53AB02BC6BFA000195A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 061AAD3B2BBDBF9600593134 /* Project object */;
+	rootObject = 84E53A8E2BC6BF9D00195A25 /* Project object */;
 }
