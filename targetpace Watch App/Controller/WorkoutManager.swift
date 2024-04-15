@@ -20,7 +20,7 @@ class WorkoutManager: NSObject, ObservableObject {
     var session: HKWorkoutSession?
     var builder: HKLiveWorkoutBuilder?
     
-    // Start the workout.
+    // Start the workout collection.
     func startWorkout(workoutType: HKWorkoutActivityType) {
         let configuration = HKWorkoutConfiguration()
         configuration.activityType = workoutType
@@ -51,16 +51,19 @@ class WorkoutManager: NSObject, ObservableObject {
         }
     }
     
-    @Published var authorizationGranted = true
+    @Published var authorizationGranted = false
     
     // The quantity type to write to the health store.
-    let typesToShare: Set<HKQuantityType> = []
+    let typesToShare: Set<HKSampleType> = [
+        HKQuantityType.workoutType()
+    ]
     
     // The quantity types to read from the health store.
     let typesToRead: Set = [
-        HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-        HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-        HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+        //        HKQuantityType.quantityType(forIdentifier: .heartRate)!,
+        //        HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
+        //        HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+        HKObjectType.workoutType()
     ]
     
     // Request authorization to access HealthKit.
@@ -73,12 +76,53 @@ class WorkoutManager: NSObject, ObservableObject {
                     print("Authorization granted")
                     DispatchQueue.main.async {
                         self.checkAuthorizationStatus()
+                        //                        self.startObservingWorkoutSessions()
                     }
                 } else {
                     print("Authorization denied or error: \(error?.localizedDescription ?? "Unknown error")")
                 }
             }
         }
+    }
+    
+    func startObservingWorkoutSessions() {
+        let workoutType = HKObjectType.workoutType()
+        let predicate = HKQuery.predicateForWorkouts(with: .running) // Filter by workout type if needed
+        
+        let observerQuery = HKObserverQuery(sampleType: workoutType, predicate: predicate) { (query, completionHandler, error) in
+            if let error = error {
+                // Handle error
+                print("Observer query error: \(error.localizedDescription)")
+                return
+            }
+            
+            // Call queryWorkoutSessions to fetch updated sessions
+            print("Updated")
+            self.queryWorkoutSessions()
+            // Call the completion handler to indicate that the query has finished executing
+            completionHandler()
+        }
+        
+        healthStore.execute(observerQuery)
+    }
+    
+    func queryWorkoutSessions() {
+        let workoutType = HKObjectType.workoutType()
+        let predicate = HKQuery.predicateForWorkouts(with: .running) // Filter by workout type if needed
+        
+        let query = HKSampleQuery(sampleType: workoutType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, results, error) in
+            if let workouts = results as? [HKWorkout] {
+                print("Workouts: ", workouts.count)
+                for workout in workouts {
+                    // Process workout data
+                    print("Workout \(workout.startDate) - \(workout.endDate)")
+                }
+            } else {
+                // Handle error
+            }
+        }
+        
+        healthStore.execute(query)
     }
     
     // Check required authorization granted
@@ -140,7 +184,7 @@ class WorkoutManager: NSObject, ObservableObject {
     
     func updateForStatistics(_ statistics: HKStatistics?) {
         guard let statistics = statistics else { return }
-        
+        print("Updating")
         DispatchQueue.main.async {
             switch statistics.quantityType {
             case HKQuantityType.quantityType(forIdentifier: .heartRate):
@@ -156,7 +200,22 @@ class WorkoutManager: NSObject, ObservableObject {
             default:
                 return
             }
+            // Convert distance to kilometers
+            let distanceInKm = self.distance / 1000
+            
+            // Calculate pace in seconds per kilometer
+            let paceInSecondsPerKm = self.getElapsedTime() ?? 0 / distanceInKm
+            self.pace = paceInSecondsPerKm / 60
+            print(self.running, self.distance, self.activeEnergy)
         }
+    }
+    
+    func getElapsedTime() -> TimeInterval? {
+        guard let startDate = self.builder?.startDate else {
+            return nil
+        }
+        let currentTime = Date()
+        return currentTime.timeIntervalSince(startDate)
     }
     
     func resetWorkout() {
@@ -170,32 +229,16 @@ class WorkoutManager: NSObject, ObservableObject {
         distance = 0
         pace = 0
     }
-    
-    func getElapsedTime() -> TimeInterval? {
-        guard let startDate = self.builder?.startDate else {
-            return nil
-        }
-        let currentTime = Date()
-        return currentTime.timeIntervalSince(startDate)
-    }
-    
-    // Function to calculate target pace
-    func calculatePace() {
-        // Convert distance to kilometers
-        let distanceInKm = self.distance / 1000
-        
-        // Calculate pace in seconds per kilometer
-        let paceInSecondsPerKm = self.getElapsedTime() ?? 0 / distanceInKm
-        self.pace = paceInSecondsPerKm / 60
-    }
 }
 
 // MARK: - HKWorkoutSessionDelegate
 extension WorkoutManager: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState,
                         from fromState: HKWorkoutSessionState, date: Date) {
+        print(toState)
         DispatchQueue.main.async {
             self.running = toState == .running
+            print("Running")
         }
 
         // Wait for the session to transition states before ending the builder.
@@ -211,7 +254,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     }
 
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
-
+        print("Workout session failed with error: \(error.localizedDescription)")
     }
 }
 
