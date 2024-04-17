@@ -60,10 +60,7 @@ class WorkoutManager: NSObject, ObservableObject {
     
     // The quantity types to read from the health store.
     let typesToRead: Set = [
-        //        HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-        //        HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-        //        HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-        HKObjectType.workoutType()
+        HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
     ]
     
     // Request authorization to access HealthKit.
@@ -76,7 +73,6 @@ class WorkoutManager: NSObject, ObservableObject {
                     print("Authorization granted")
                     DispatchQueue.main.async {
                         self.checkAuthorizationStatus()
-                        //                        self.startObservingWorkoutSessions()
                     }
                 } else {
                     print("Authorization denied or error: \(error?.localizedDescription ?? "Unknown error")")
@@ -85,49 +81,12 @@ class WorkoutManager: NSObject, ObservableObject {
         }
     }
     
-    func startObservingWorkoutSessions() {
-        let workoutType = HKObjectType.workoutType()
-        let predicate = HKQuery.predicateForWorkouts(with: .running) // Filter by workout type if needed
-        
-        let observerQuery = HKObserverQuery(sampleType: workoutType, predicate: predicate) { (query, completionHandler, error) in
-            if let error = error {
-                // Handle error
-                print("Observer query error: \(error.localizedDescription)")
-                return
-            }
-            
-            // Call queryWorkoutSessions to fetch updated sessions
-            print("Updated")
-            self.queryWorkoutSessions()
-            // Call the completion handler to indicate that the query has finished executing
-            completionHandler()
-        }
-        
-        healthStore.execute(observerQuery)
-    }
-    
-    func queryWorkoutSessions() {
-        let workoutType = HKObjectType.workoutType()
-        let predicate = HKQuery.predicateForWorkouts(with: .running) // Filter by workout type if needed
-        
-        let query = HKSampleQuery(sampleType: workoutType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, results, error) in
-            if let workouts = results as? [HKWorkout] {
-                print("Workouts: ", workouts.count)
-                for workout in workouts {
-                    // Process workout data
-                    print("Workout \(workout.startDate) - \(workout.endDate)")
-                }
-            } else {
-                // Handle error
-            }
-        }
-        
-        healthStore.execute(query)
-    }
-    
     // Check required authorization granted
     func checkAuthorizationStatus() {
         authorizationGranted = isAuthorizationGranted()
+        if authorizationGranted {
+            selectedWorkout = .running
+        }
     }
     
     func isAuthorizationGranted() -> Bool {

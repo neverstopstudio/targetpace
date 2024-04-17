@@ -16,7 +16,6 @@ struct targetpace_Watch_AppApp: App {
                 .environmentObject(workoutManager)
                 .onAppear {
                     workoutManager.requestAuthorization()
-                    workoutManager.selectedWorkout = .running
                 }
         }
     }
