@@ -12,17 +12,22 @@ struct ContentView: View {
     @State private var selectedTab = 0
     @AppStorage("targetPace") var targetPace: Double = -1.0
     @State private var previousPaces: [Double] = []
+    @State private var hasLoadedFromStorage = false
+    
+    func addPaceIfNotExists(targetPace: Double) {
+        if !previousPaces.contains(targetPace) && targetPace > 0 {
+            previousPaces.append(targetPace)
+            if previousPaces.count > 5 {
+                previousPaces.removeFirst()
+            }
+        }
+    }
     
     // Function to set both target pace and previous pace
     func setPace(newPace: Double) {
-        if previousPaces.contains(targetPace) == false && targetPace > 0 {
-            previousPaces.append(targetPace)
-            if previousPaces.count == 6 {
-                previousPaces.removeFirst();
-            }
-        }
         targetPace = newPace
         print(newPace)
+        addPaceIfNotExists(targetPace: targetPace)
     }
     
     var body: some View {
@@ -55,6 +60,13 @@ struct ContentView: View {
                     }
                     
                 }
+            }
+        }
+        .onAppear {
+            if !hasLoadedFromStorage && targetPace > 0 {
+                // Populate previousPaces with the initial targetPace
+                addPaceIfNotExists(targetPace: targetPace)
+                hasLoadedFromStorage = true
             }
         }
     }

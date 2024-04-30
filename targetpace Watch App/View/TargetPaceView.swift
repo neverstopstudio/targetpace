@@ -29,7 +29,7 @@ struct TargetPaceView: View {
                 .font(.system(size: 18, weight: .bold))
                 .onAppear {
                     if self.targetPace == self.workoutManager.pace {
-                        DispatchQueue.main.async {
+                        DispatchQueue.global().async {
                             FeedbackManager.shared.achieveTargetPace()
                         }
                     }
@@ -39,7 +39,7 @@ struct TargetPaceView: View {
                 Text("GO FASTER!")
                     .font(.system(size: 18, weight: .bold))
                     .onAppear {
-                        DispatchQueue.main.async {
+                        DispatchQueue.global().async {
                             FeedbackManager.shared.runningTooSlow()
                         }
                     }
@@ -49,7 +49,7 @@ struct TargetPaceView: View {
                 Text("GO SLOWER!")
                     .font(.system(size: 18, weight: .bold))
                     .onAppear {
-                        DispatchQueue.main.async {
+                        DispatchQueue.global().async {
                             FeedbackManager.shared.runningTooFast()
                         }
                     }

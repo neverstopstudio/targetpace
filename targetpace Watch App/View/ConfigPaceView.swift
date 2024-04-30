@@ -11,7 +11,7 @@ struct ConfigPaceView: View {
     @Binding var selectedTab: Int
     @Binding var targetPace: Double
     @State var selectedPace: Double = 0.0
-    let paceOptions: [Double] = Array(stride(from: 0.0, through: 50.0, by: 0.5))
+    let paceOptions: [Double] = Array(stride(from: 0.0, through: 50.0, by: 0.1))
     let setPace: (Double) -> Void
     
     var body: some View {
